@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!-- directive 'ng-app' links html to javascript -->
+<html ng-app="gemStore">
+
+<head>
+  <!-- angular library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+  <!-- include our module by linking to our js file -->
+  <script type="text/javascript" src="app.js"></script>
+  <!-- css for bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+  <!-- link to our own styles.css -->
+  <link type="text/css" rel="stylesheet" href="styles.css"/>
+</head>
+
+<!-- Use the keyword 'as' to allow us to refer to the StoreController as 'store' -->
+  <body ng-controller="">
+
+<!-- bootstrap element -->
+    <ul class="list-group">
+
+<!-- Use the 'ng-repeat' directive to iterate through the gems using "[item in StoreController.items]" -->
+      <li style="text-align: center;" class="list-group-item" ="">
+       
+        <h3>
+<!-- we access the gems variable data using the product property inside an expression -->
+          <em class="pull-left">{{.name}}</em>
+          <em class="pull-right">{{.price | currency}}</em>
+
+<!-- we can render a photo using the ng-src directive and an expression to reference product.image -->
+          <img ng-src = product.image />
+        </h3>
+
+<!-- we use the 'ng-show' directive to display a button if the value of the attribute is true, i.e. canPurchase is true -->
+        <button ="product.">Add to cart</button>
+      </li>
+    </ul>
+  </body>
+</html>
+
+
+
+
+
+
+
+

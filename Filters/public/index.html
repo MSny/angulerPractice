@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="angularpractice">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+    <script src = "angularpractice.js"></script>
+    <link rel="stylesheet" href="styles.css">
+	<title></title>
+</head>
+<body>
+	<div ng-controller="testcontroller">
+		<h1 class="dinner">REPAST</h1>
+		<input type="text" ng-model="newitem">
+		<button ng-click="addtoList()">Add to Dinner</button>
+		<ul>
+			<li ng-repeat="item in dinner">{{item | uppercase}} <!-- filter example. Common filter structure: {{ data* | filter:options* }} -->
+			</li>
+		</ul>
+		<div class="partials">
+			<a href="#apéritifs">Apéritifs</a>
+			<div ng-view></div>  <!-- the route will grab the above file and match it to the views -->
+		</div>
+	</div>
+
+</body>
+</html>
